@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TIAImageAndInputControl</string>
+    <string name="app_name">Sena Café</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -9,7 +9,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="nome_do_cafe">Sena Cafe</string>
+    <string name="nome_do_cafe">Cardápio</string>
     <string name="donut_description">Donuts are glazed and sprinkled with candy</string>
     <string name="icecream_description">Ice cream sandwiches have chocolate wafers and vanilla filling</string>
     <string name="froyo_description">FroYo is premium self-serve frozen yogurt</string>
@@ -17,11 +17,23 @@
     <string name="donut_order_message">You ordered a donut.</string>
     <string name="ice_cream_order_message">You ordered an ice cream sandwich.</string>
     <string name="froyo_order_message">You ordered a FroYo.</string>
-    <string name="informacao_ao_cliente">Para fazer um pedido, clique na imagem e, em seguida, no carrinho!</string>
+    <string name="informacao_ao_cliente">Para fazer um pedido, clique em uma imagem do Cardápio e, em seguida, no carrinho!</string>
     <string name="name_label_text">Name:</string>
     <string name="enter_name_hint">Entre com o seu nome</string>
     <string name="address_label_text">End.:</string>
     <string name="enter_address_hint">Entre com o seu endereço</string>
     <string name="phone_label_text">Tel.:</string>
     <string name="enter_phone_hint">Entre com o seu telefone</string>
+    <string name="forma_de_entrega">Escolha a forma de entrega</string>
+    <string name="same_day_messenger_service">Entrega no mesmo dia</string>
+    <string name="next_day_ground_delivery">Entrega para o próximo dia</string>
+    <string name="retirar_na_loja">Retirar Na Loja</string>
+    <string name="mensagem_de_opcao_nao_selecionada_no_cardapio">Selecione uma opção do Cardápio!</string>
+
+    <string-array name="spinner_options">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Mobile</item>
+        <item>Others</item>
+    </string-array>
 </resources>

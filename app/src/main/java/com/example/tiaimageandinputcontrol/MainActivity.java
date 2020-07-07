@@ -36,19 +36,24 @@ public class MainActivity extends AppCompatActivity {
         ivIceCream = findViewById(R.id.ivIceCream);
         ivFroyo = findViewById(R.id.ivFroyo);
 
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-                Intent intent = new Intent(getApplicationContext(), OrderActivity.class);
-                intent.putExtra(EXTRA_MESSAGE, clientOrder);
-                startActivity(intent);
 
+                if(clientOrder != null) {
+                    Intent intent = new Intent(getApplicationContext(), OrderActivity.class);
+                    intent.putExtra(EXTRA_MESSAGE, clientOrder);
+                    startActivity(intent);
+                }else Toast.makeText(MainActivity.this, R.string.mensagem_de_opcao_nao_selecionada_no_cardapio, Toast.LENGTH_LONG).show();
             }
         });
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -76,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //        Toast.makeText(this, "message", Toast.LENGTH_SHORT).show();
 //    }
+
 
     public void showDonutOrder(View view){
 

@@ -1,0 +1,2 @@
+rootProject.name='TIAImageAndInputControl'
+include ':app'

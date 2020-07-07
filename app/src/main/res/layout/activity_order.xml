@@ -79,5 +79,66 @@
         android:hint="@string/enter_phone_hint"
         android:inputType="phone"
         app:layout_constraintBaseline_toBaselineOf="@+id/tvFone"
+        app:layout_constraintEnd_toStartOf="@+id/spTipoDeFone"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvFone" />
+
+    <Spinner
+        android:id="@+id/spTipoDeFone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etFone"
+        app:layout_constraintTop_toBottomOf="@+id/etEndereco" />
+
+    <TextView
+        android:id="@+id/tvFormaDeEntrega"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/forma_de_entrega"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFone" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFormaDeEntrega">
+
+
+        <RadioButton
+            android:id="@+id/rbMesmoDia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/same_day_messenger_service"
+
+            />
+
+        <RadioButton
+            android:id="@+id/rbProximoDia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/next_day_ground_delivery" />
+        <!--            android:checked="true"-->
+
+
+        <RadioButton
+            android:id="@+id/rbRetirarNaLoja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/retirar_na_loja" />
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
