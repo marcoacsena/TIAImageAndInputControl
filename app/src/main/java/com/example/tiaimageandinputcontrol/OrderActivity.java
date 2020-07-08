@@ -20,8 +20,6 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
     private RadioButton rbMesmoDia, rbProximoDia, rbRetirarNaLoja;
     private Spinner spTipoDeFone;
 
-    private ArrayAdapter<String> arrayAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,26 +29,41 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         rbMesmoDia = findViewById(R.id.rbMesmoDia);
         rbProximoDia = findViewById(R.id.rbProximoDia);
         rbRetirarNaLoja = findViewById(R.id.rbRetirarNaLoja);
-        spTipoDeFone = findViewById(R.id.spTipoDeFone);
         rbProximoDia.setChecked(true);
+        spTipoDeFone = findViewById(R.id.spTipoDeFone);
 
+        // Intent para capturar os dados vindos da MainActivity
         Intent intent = getIntent();
         String message = "Your order: " +intent.getStringExtra(EXTRA_MESSAGE);
         tvOrderMessage.setText(message);
 
+        //Define o ouvinte do Spinner
         if(spTipoDeFone != null){
-
             spTipoDeFone.setOnItemSelectedListener(this);
-        }
 
-        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getApplicationContext(),
-                R.array.spinner_options, R.layout.support_simple_spinner_dropdown_item);
+            //Cria o arrayAdapter e definie: contexto, o array de strings (criado no arquivo string.xml) e o layout
+            ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getApplicationContext(),
+                    R.array.spinner_options, R.layout.support_simple_spinner_dropdown_item);
 
-        arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+            //Specify the layout to use when the list of choices appears.
+            arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
 
-        if(spTipoDeFone != null){
+            // Apply the adapter to the spinner.
             spTipoDeFone.setAdapter(arrayAdapter);
+
         }
+
+//        //Cria o arrayAdapter e definie: contexto, o array de strings (criado no arquivo string.xml) e o layout
+//        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getApplicationContext(),
+//                R.array.spinner_options, R.layout.support_simple_spinner_dropdown_item);
+//
+//        //Specify the layout to use when the list of choices appears.
+//        arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+
+//        // Apply the adapter to the spinner.
+//        if(spTipoDeFone != null){
+//            spTipoDeFone.setAdapter(arrayAdapter);
+//        }
 
     }
 
