@@ -37,8 +37,9 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         String message = "Your order: " +intent.getStringExtra(EXTRA_MESSAGE);
         tvOrderMessage.setText(message);
 
-        //Define o ouvinte do Spinner
+
         if(spTipoDeFone != null){
+            //Define o ouvinte do Spinner
             spTipoDeFone.setOnItemSelectedListener(this);
 
             //Cria o arrayAdapter e definie: contexto, o array de strings (criado no arquivo string.xml) e o layout
@@ -53,17 +54,6 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
 
         }
 
-//        //Cria o arrayAdapter e definie: contexto, o array de strings (criado no arquivo string.xml) e o layout
-//        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getApplicationContext(),
-//                R.array.spinner_options, R.layout.support_simple_spinner_dropdown_item);
-//
-//        //Specify the layout to use when the list of choices appears.
-//        arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-
-//        // Apply the adapter to the spinner.
-//        if(spTipoDeFone != null){
-//            spTipoDeFone.setAdapter(arrayAdapter);
-//        }
 
     }
 
