@@ -90,7 +90,8 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_order) {
+            Toast.makeText(this, R.string.action_order_message, Toast.LENGTH_SHORT).show();
             return true;
         }
 
