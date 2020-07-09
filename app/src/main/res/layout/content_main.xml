@@ -105,4 +105,28 @@
         app:layout_constraintStart_toEndOf="@+id/ivFroyo"
         app:layout_constraintTop_toTopOf="@+id/ivFroyo" />
 
+    <TextView
+        android:id="@+id/tvFone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/clique_aqui_para_liguar_para_nos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivFroyo" />
+
+    <EditText
+        android:id="@+id/etLigar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:ems="10"
+        android:imeOptions="actionSend"
+        android:inputType="phone"
+        android:text="@string/fone_do_cafe"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFone" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

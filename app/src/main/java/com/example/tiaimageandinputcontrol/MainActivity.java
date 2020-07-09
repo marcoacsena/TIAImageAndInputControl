@@ -1,6 +1,7 @@
 package com.example.tiaimageandinputcontrol;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -9,9 +10,13 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.view.FocusFinder;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -20,10 +25,12 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView ivDonut, ivIceCream, ivFroyo;
-    private TextView tvDonut, tvIceCream, tvFroyo;
+    private TextView tvDonut, tvIceCream, tvFroyo, tvFone;
+    private EditText etFone;
 
     private String clientOrder;
     public static final String EXTRA_MESSAGE = "orderMessage";
+    public static final String FONE_DO_CAFE = "0154899167-1227";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,21 @@ public class MainActivity extends AppCompatActivity {
         ivDonut = findViewById(R.id.ivDonut);
         ivIceCream = findViewById(R.id.ivIceCream);
         ivFroyo = findViewById(R.id.ivFroyo);
+        tvFone = findViewById(R.id.tvFone);
+        //etFone = findViewById(R.id.etFone);
+
+
+        tvFone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String numeroDeTelefone = FONE_DO_CAFE;
+                Uri uri = Uri.parse("tel:" +FONE_DO_CAFE);
+                Intent i = new Intent(Intent.ACTION_DIAL, uri);
+                startActivity(i);
+
+                
+            }
+        });
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -52,8 +74,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -103,5 +123,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, clientOrder, Toast.LENGTH_SHORT).show();
 
     }
+
+
 
 }

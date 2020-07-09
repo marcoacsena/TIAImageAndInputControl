@@ -29,6 +29,8 @@
     <string name="next_day_ground_delivery">Entrega para o próximo dia</string>
     <string name="retirar_na_loja">Retirar Na Loja</string>
     <string name="mensagem_de_opcao_nao_selecionada_no_cardapio">Selecione uma opção do Cardápio!</string>
+    <string name="fone_do_cafe">48988374185</string>
+    <string name="clique_aqui_para_liguar_para_nos">Ou clique aqui para liguar para nós</string>
 
     <string-array name="spinner_options">
         <item>Home</item>
