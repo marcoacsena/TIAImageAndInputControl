@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvDonut, tvIceCream, tvFroyo, tvFone;
     private EditText etFone;
 
+    //Atenção!!! A variável clientOrder é super importante. Ela inicia a lógica do programa
     private String clientOrder;
     public static final String EXTRA_MESSAGE = "orderMessage";
     public static final String FONE_DO_CAFE = "0154899167-1227";
@@ -87,13 +88,37 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_order) {
-            Toast.makeText(this, R.string.action_order_message, Toast.LENGTH_SHORT).show();
-            return true;
-        }
+
+        if(clientOrder != null) {
+            Intent intent;
+
+            switch (item.getItemId()) {
+
+                case R.id.action_order:
+                    intent = new Intent(getApplicationContext(), OrderActivity.class);
+                    intent.putExtra(EXTRA_MESSAGE, clientOrder);
+                    startActivity(intent);
+                    break;
+                case R.id.action_favorites:
+                    intent = new Intent(getApplicationContext(), SegundaActivity.class);
+                    intent.putExtra(EXTRA_MESSAGE, clientOrder);
+                    startActivity(intent);
+                    break;
+                case R.id.action_status:
+                    intent = new Intent(getApplicationContext(), SegundaActivity.class);
+                    intent.putExtra(EXTRA_MESSAGE, clientOrder);
+                    startActivity(intent);
+                    break;
+                case R.id.action_contact:
+                    intent = new Intent(getApplicationContext(), OrderActivity.class);
+                    intent.putExtra(EXTRA_MESSAGE, clientOrder);
+                    startActivity(intent);
+                    break;
+                default:
+                    //Do nothing!!!
+            }
+        }else Toast.makeText(MainActivity.this, R.string.mensagem_de_opcao_nao_selecionada_no_cardapio, Toast.LENGTH_LONG).show();
 
         return super.onOptionsItemSelected(item);
     }
